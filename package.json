@@ -6,7 +6,9 @@
   "scripts": {
     "format": "prettier . --write",
     "challenge1": "nodemon --exec npx ts-node ./challenge1.ts",
-    "challenge2": "nodemon --exec npx ts-node ./challenge2.ts"
+    "challenge2": "nodemon --exec npx ts-node ./challenge2.ts",
+    "challenge3": "nodemon --exec npx ts-node ./challenge3.ts",
+    "challenge4": "nodemon --exec npx ts-node ./challenge4.ts"
   },
   "author": "",
   "license": "ISC",
