@@ -1,20 +1,22 @@
 {
-  "name": "adventofcode",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "format": "prettier . --write",
-    "challenge1": "nodemon --exec npx ts-node ./challenge1.ts",
-    "challenge2": "nodemon --exec npx ts-node ./challenge2.ts",
-    "challenge3": "nodemon --exec npx ts-node ./challenge3.ts",
-    "challenge4": "nodemon --exec npx ts-node ./challenge4.ts"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "nodemon": "^3.0.1",
-    "prettier": "^3.1.0",
-    "ts-node": "^10.9.1"
-  }
+    "name": "adventofcode",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier . --write",
+        "challenge1": "nodemon --exec npx ts-node ./challenge1.ts",
+        "challenge2": "nodemon --exec npx ts-node ./challenge2.ts",
+        "challenge3": "nodemon --exec npx ts-node ./challenge3.ts",
+        "challenge4": "nodemon --exec npx ts-node ./challenge4.ts",
+        "challenge5": "nodemon --exec npx ts-node ./challenge5.ts",
+        "challenge6": "nodemon --exec npx ts-node ./challenge6.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "nodemon": "^3.0.1",
+        "prettier": "^3.1.0",
+        "ts-node": "^10.9.1"
+    }
 }

@@ -1,18 +1,18 @@
 {
-  "compilerOptions": {
-    "sourceMap": true,
-    "target": "ES2021",
-    "outDir": "./dist",
-    "baseUrl": "./src",
-    "alwaysStrict": true,
-    "noImplicitAny": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "allowSyntheticDefaultImports": true
-  },
-  "include": ["*.ts"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "ES2021",
+        "outDir": "./dist",
+        "baseUrl": "./src",
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "module": "Node16",
+        "moduleResolution": "Node16",
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["*.ts"],
+    "exclude": ["node_modules"]
 }
