@@ -5,14 +5,14 @@
     "main": "index.js",
     "scripts": {
         "format": "prettier . --write",
-        "challenge1": "nodemon --exec npx ts-node ./challenge1.ts",
-        "challenge2": "nodemon --exec npx ts-node ./challenge2.ts",
-        "challenge3": "nodemon --exec npx ts-node ./challenge3.ts",
-        "challenge4": "nodemon --exec npx ts-node ./challenge4.ts",
-        "challenge5": "nodemon --exec npx ts-node ./challenge5.ts",
-        "challenge6": "nodemon --exec npx ts-node ./challenge6.ts",
-        "challenge7": "nodemon --exec npx ts-node ./challenge7.ts",
-        "challenge8": "nodemon --exec npx ts-node ./challenge8.ts"
+        "challenge1a": "nodemon --exec npx ts-node ./challenge1a.ts",
+        "challenge1b": "nodemon --exec npx ts-node ./challenge1b.ts",
+        "challenge2a": "nodemon --exec npx ts-node ./challenge2a.ts",
+        "challenge2b": "nodemon --exec npx ts-node ./challenge2b.ts",
+        "challenge3a": "nodemon --exec npx ts-node ./challenge3a.ts",
+        "challenge3b": "nodemon --exec npx ts-node ./challenge3b.ts",
+        "challenge4a": "nodemon --exec npx ts-node ./challenge4a.ts",
+        "challenge4b": "nodemon --exec npx ts-node ./challenge4b.ts"
     },
     "author": "",
     "license": "ISC",
