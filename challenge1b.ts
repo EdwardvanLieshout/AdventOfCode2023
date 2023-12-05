@@ -1,6 +1,6 @@
-import { readFileSync } from 'fs'
+import { readFileSync } from 'fs';
 
-const file = readFileSync('./input1', 'utf-8')
+const file = readFileSync('./input1', 'utf-8');
 const arr = file
     .split(/\r?\n/)
     .map((originalval) =>
@@ -16,6 +16,6 @@ const arr = file
             .replaceAll('nine', 'nine9nine')
     )
     .map((val) => val.split('').filter((char) => char.match(/\d/)))
-    .map((numvalues) => +(numvalues[0] + numvalues.pop()))
+    .map((numvalues) => +(numvalues[0] + numvalues.pop()));
 
-console.log(arr.reduce((p, a) => p + a, 0))
+console.log(arr.reduce((p, a) => p + a, 0));

@@ -1,6 +1,6 @@
-import { readFileSync } from 'fs'
+import { readFileSync } from 'fs';
 
-const file = readFileSync('./input2', 'utf-8')
+const file = readFileSync('./input2', 'utf-8');
 const arr = file
     .split(/\r?\n/)
     .map((gameStr) => gameStr.split(':'))
@@ -24,6 +24,6 @@ const arr = file
         ),
     ])
     .filter((game) => game[1].length === 0)
-    .map((game) => +game[0])
+    .map((game) => +game[0]);
 
-console.log(arr.reduce((p, a) => p + a, 0))
+console.log(arr.reduce((p, a) => p + a, 0));
