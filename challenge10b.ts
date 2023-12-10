@@ -64,22 +64,22 @@ const updateDirAndMarkTiles = () => {
     const currentChar = arr[position[0]][position[1]];
     if (currentChar === 'L') {
         direction = direction === 'left' ? 'up' : 'right';
-        arr[position[0]][position[1]] = direction === 'up' ? 'UL' : 'DR';
+        arr[position[0]][position[1]] = direction === 'up' ? 'LU' : 'DR';
         return;
     }
     if (currentChar === 'J') {
         direction = direction === 'right' ? 'up' : 'left';
-        arr[position[0]][position[1]] = direction === 'up' ? 'UR' : 'DL';
+        arr[position[0]][position[1]] = direction === 'up' ? 'RU' : 'DL';
         return;
     }
     if (currentChar === '7') {
         direction = direction === 'right' ? 'down' : 'left';
-        arr[position[0]][position[1]] = direction === 'down' ? 'DR' : 'UL';
+        arr[position[0]][position[1]] = direction === 'down' ? 'RD' : 'UL';
         return;
     }
     if (currentChar === 'F') {
         direction = direction === 'left' ? 'down' : 'right';
-        arr[position[0]][position[1]] = direction === 'down' ? 'DL' : 'UR';
+        arr[position[0]][position[1]] = direction === 'down' ? 'LD' : 'UR';
         return;
     }
     if (currentChar === 'S') {
@@ -188,4 +188,53 @@ while (iterator < 50) {
 
 let answers = arr.map((row) => row.filter((c) => c.includes('.') && c.length === 5));
 
+arr = arr.map((row) => {
+    return row.map((char) => {
+        if (char === 'U') {
+            return '↑';
+        }
+        if (char === 'D') {
+            return '↓';
+        }
+        if (char === 'L') {
+            return '←';
+        }
+        if (char === 'R') {
+            return '→';
+        }
+        if (char === 'UR') {
+            return '↱';
+        }
+        if (char === 'DR') {
+            return '↳';
+        }
+        if (char === 'UL') {
+            return '↰';
+        }
+        if (char === 'DL') {
+            return '↲';
+        }
+        if (char === 'RU') {
+            return '⬏';
+        }
+        if (char === 'RD') {
+            return '↴';
+        }
+        if (char === 'LU') {
+            return '⬑';
+        }
+        if (char === 'LD') {
+            return '⬐';
+        }
+        if (char.length === 5) {
+            return '$'
+        }
+        if (char === 'S') {
+            return '▩'
+        }
+        return '.';
+    })
+})
+
+console.log(arr.map((row) => row.join('')).join('\n'));
 console.log(answers.reduce((p, a) => p + a.length, 0));
