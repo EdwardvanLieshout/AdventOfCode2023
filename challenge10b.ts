@@ -227,14 +227,14 @@ arr = arr.map((row) => {
             return '⬐';
         }
         if (char.length === 5) {
-            return '$'
+            return '$';
         }
         if (char === 'S') {
-            return '▩'
+            return '▩';
         }
         return '.';
-    })
-})
+    });
+});
 
 console.log(arr.map((row) => row.join('')).join('\n'));
 console.log(answers.reduce((p, a) => p + a.length, 0));
