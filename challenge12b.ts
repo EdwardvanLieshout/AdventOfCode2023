@@ -83,4 +83,4 @@ for (let record of conditionRecords) {
 const millisecondsEnd = new Date().getTime();
 
 console.log(r);
-console.log('Duration:', (millisecondsEnd-millisecondsStart)/1000);
+console.log('Duration:', (millisecondsEnd - millisecondsStart) / 1000);

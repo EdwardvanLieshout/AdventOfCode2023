@@ -28,7 +28,15 @@
         "challenge11a": "nodemon --exec npx ts-node ./challenge11a.ts",
         "challenge11b": "nodemon --exec npx ts-node ./challenge11b.ts",
         "challenge12a": "nodemon --exec npx ts-node ./challenge12a.ts",
-        "challenge12b": "nodemon --exec npx ts-node ./challenge12b.ts"
+        "challenge12b": "nodemon --exec npx ts-node ./challenge12b.ts",
+        "challenge13a": "nodemon --exec npx ts-node ./challenge13a.ts",
+        "challenge13b": "nodemon --exec npx ts-node ./challenge13b.ts",
+        "challenge14a": "nodemon --exec npx ts-node ./challenge14a.ts",
+        "challenge14b": "nodemon --exec npx ts-node ./challenge14b.ts",
+        "challenge15a": "nodemon --exec npx ts-node ./challenge15a.ts",
+        "challenge15b": "nodemon --exec npx ts-node ./challenge15b.ts",
+        "challenge16a": "nodemon --exec npx ts-node ./challenge16a.ts",
+        "challenge16b": "nodemon --exec npx ts-node ./challenge16b.ts"
     },
     "author": "",
     "license": "ISC",
