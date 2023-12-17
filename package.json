@@ -36,7 +36,9 @@
         "challenge15a": "nodemon --exec npx ts-node ./challenge15a.ts",
         "challenge15b": "nodemon --exec npx ts-node ./challenge15b.ts",
         "challenge16a": "nodemon --exec npx ts-node ./challenge16a.ts",
-        "challenge16b": "nodemon --exec npx ts-node ./challenge16b.ts"
+        "challenge16b": "nodemon --exec npx ts-node ./challenge16b.ts",
+        "challenge17a": "nodemon --exec npx ts-node ./challenge17a.ts",
+        "challenge17b": "nodemon --exec npx ts-node ./challenge17b.ts"
     },
     "author": "",
     "license": "ISC",
