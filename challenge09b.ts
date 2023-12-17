@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync('./input9', 'utf-8');
+const file = readFileSync('./input09', 'utf-8');
 const vals = file.split(/\r?\n/).map((line) => line.split(' ').map((numStr) => +numStr));
 
 let resultVals = [];

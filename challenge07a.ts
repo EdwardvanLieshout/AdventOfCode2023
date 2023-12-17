@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync('./input7', 'utf-8');
+const file = readFileSync('./input07', 'utf-8');
 
 class CardsAndBid {
     cards: number[];

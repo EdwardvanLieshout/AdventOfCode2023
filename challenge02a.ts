@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync('./input2', 'utf-8');
+const file = readFileSync('./input02', 'utf-8');
 const arr = file
     .split(/\r?\n/)
     .map((gameStr) => gameStr.split(':'))

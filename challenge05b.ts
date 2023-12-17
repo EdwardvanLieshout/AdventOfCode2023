@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync('./input5', 'utf-8');
+const file = readFileSync('./input05', 'utf-8');
 let arr = file.split(/\r?\n/);
 let seeds = arr[0]
     .substring(arr[0].indexOf(':') + 2)

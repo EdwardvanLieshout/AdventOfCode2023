@@ -6,6 +6,8 @@ const map = file.split(/\r?\n/).map((line) => line.split('').map((char) => +char
 const answers = [9999999999999];
 const cache = new Map();
 
+const millisecondsStart = new Date().getTime();
+
 const move = (dir: number, amountSameDir: number, totalHeatLoss: number, x: number, y: number): void => {
     let key = `${x},${y},${dir},${amountSameDir}`;
     totalHeatLoss += map[y][x];
@@ -67,5 +69,9 @@ const move = (dir: number, amountSameDir: number, totalHeatLoss: number, x: numb
 };
 move(3, 0, 0 - map[0][0], 0, 0);
 move(2, 0, 0 - map[0][0], 0, 0);
+
+const millisecondsEnd = new Date().getTime();
+
 console.log(answers.sort((a, b) => a - b));
 console.log(answers.sort((a, b) => a - b)[0]);
+console.log('Duration:', (millisecondsEnd - millisecondsStart) / 1000);

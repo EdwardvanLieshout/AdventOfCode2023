@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync('./input1', 'utf-8');
+const file = readFileSync('./input01', 'utf-8');
 const arr = file
     .split(/\r?\n/)
     .map((val) => val.split('').filter((char) => char.match(/\d/)))

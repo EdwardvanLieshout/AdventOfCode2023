@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync('./input3', 'utf-8');
+const file = readFileSync('./input03', 'utf-8');
 
 const norm = (num: number) => {
     if (num === -1) {

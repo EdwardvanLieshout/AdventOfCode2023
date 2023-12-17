@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const file = readFileSync('./input6', 'utf-8');
+const file = readFileSync('./input06', 'utf-8');
 
 interface Race {
     time: number;
