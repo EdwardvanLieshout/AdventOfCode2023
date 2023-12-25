@@ -50,7 +50,9 @@
         "challenge22a": "nodemon --exec npx ts-node ./challenge22a.ts",
         "challenge22b": "nodemon --exec npx ts-node ./challenge22b.ts",
         "challenge23a": "nodemon --exec npx ts-node ./challenge23a.ts",
-        "challenge23b": "nodemon --exec npx ts-node ./challenge23b.ts"
+        "challenge23b": "nodemon --exec npx ts-node ./challenge23b.ts",
+        "challenge24a": "nodemon --exec npx ts-node ./challenge24a.ts",
+        "challenge24b": "nodemon --exec npx ts-node ./challenge24b.ts"
     },
     "author": "",
     "license": "ISC",
@@ -58,7 +60,8 @@
         "nodemon": "^3.0.1",
         "prettier": "^3.1.0",
         "ts-node": "^10.9.1",
-        "typescript": "^5.3.3"
+        "typescript": "^5.3.3",
+        "z3-solver": "^4.12.4"
     },
     "devDependencies": {
         "@types/node": "^20.10.5"
