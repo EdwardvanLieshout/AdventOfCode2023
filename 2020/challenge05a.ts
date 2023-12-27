@@ -8,4 +8,4 @@ const binary = input.map((input) =>
 const values = binary.map((str) => [parseInt(str.substring(0, 7), 2), parseInt(str.substring(7, 10), 2)]);
 const seatIDs = values.map((value) => value[0] * 8 + value[1]);
 
-console.log(seatIDs.sort((a, b) => b - a));
+console.log(seatIDs.sort((a, b) => b - a)[0]);
