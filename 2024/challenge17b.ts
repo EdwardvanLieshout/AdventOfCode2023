@@ -1,5 +1,7 @@
 import { readFileSync } from 'fs';
 
+const oldTime = new Date();
+
 const file = readFileSync('./input17.input', 'utf-8');
 const input = file.split(/\r?\n/);
 let registerA = +input[0].match(/\d+/)[0];
@@ -78,10 +80,12 @@ const getFn = (opcode: number) => {
 }
 
 let j = 1;
-let increment = 1;
+let increment = 5;
+let knownBits = '';
 while(output.join(',') !== program.join(',')) {
     j++;
-    let newA = parseInt(`${j}6274025052`, 8);
+    let jToBinary = j.toString(2);
+    let newA = parseInt(`${jToBinary}${knownBits}`, 2);
     registerA = newA;
     registerB = +input[1].match(/\d+/)[0];
     registerC = +input[2].match(/\d+/)[0];
@@ -96,15 +100,16 @@ while(output.join(',') !== program.join(',')) {
         }
     }
     if(output.length > increment) {
-        console.log(newA.toString(8), output); 
-        increment++;
+        let newAToBinary = newA.toString(2);
+        knownBits = newAToBinary.substring(newAToBinary.length-3-knownBits.length, newAToBinary.length-knownBits.length) + knownBits;
+        increment = output.length;
+        if (output.join(',') !== program.join(',')) {
+            j = 1;
+        }
     }
 }
 
+let jToBinary = j.toString(2);
+console.log(parseInt(`${jToBinary}${knownBits}`, 2));
 
-console.log(program);
-console.log(output.join(','));
-console.log(registerA);
-console.log(registerB);
-console.log(registerC);
-console.log(parseInt(`${j}6274025052`, 8));
+console.log(new Date().getTime() - oldTime.getTime() + ' milliseconds');
