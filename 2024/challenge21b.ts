@@ -18,83 +18,83 @@ let firstRobotPos = [2, 3];
 
 const solveNumLock = (str: string): string => {
     let i = 0;
-    let secondRobotSequence = '';
+    let output = '';
     while(i < str.length) {
         let nextChar = str.split('')[i]
         let nextCharPosY = numpad.findIndex((n) => n.includes(nextChar));
         let nextCharPosX = numpad[nextCharPosY].findIndex((n) => n === nextChar);
-        let nextCharDiff = [nextCharPosX, nextCharPosY];
-        let firstRobotDelta = [nextCharDiff[0]-firstRobotPos[0], nextCharDiff[1]-firstRobotPos[1]];
-        let secondRobotLeftMoves = firstRobotDelta[0] < 0 ? -firstRobotDelta[0] : 0;
-        let secondRobotRightMoves = firstRobotDelta[0] > 0 ? firstRobotDelta[0] : 0;
-        let secondRobotUpMoves = firstRobotDelta[1] < 0 ? -firstRobotDelta[1] : 0;
-        let secondRobotDownMoves = firstRobotDelta[1] > 0? firstRobotDelta[1] : 0;
-        if(numpad[firstRobotPos[1]][nextCharPosX] !== '' && secondRobotLeftMoves) {
-            secondRobotSequence += Array(secondRobotLeftMoves).fill('<').join('');
+        let nextCharPos = [nextCharPosX, nextCharPosY];
+        let robotDelta = [nextCharPos[0]-firstRobotPos[0], nextCharPos[1]-firstRobotPos[1]];
+        let deltaLeftAmount = robotDelta[0] < 0 ? -robotDelta[0] : 0;
+        let deltaRightAmount = robotDelta[0] > 0 ? robotDelta[0] : 0;
+        let deltaUpAmount = robotDelta[1] < 0 ? -robotDelta[1] : 0;
+        let deltaDownAmount = robotDelta[1] > 0? robotDelta[1] : 0;
+        if(numpad[firstRobotPos[1]][nextCharPosX] !== '' && deltaLeftAmount) {
+            output += Array(deltaLeftAmount).fill('<').join('');
         }
-        if(numpad[nextCharPosY][firstRobotPos[0]] !== '' && secondRobotDownMoves) {
-            secondRobotSequence += Array(secondRobotDownMoves).fill('v').join('');
+        if(numpad[nextCharPosY][firstRobotPos[0]] !== '' && deltaDownAmount) {
+            output += Array(deltaDownAmount).fill('v').join('');
         }
-        if(secondRobotUpMoves) {
-            secondRobotSequence += Array(secondRobotUpMoves).fill('^').join('');
+        if(deltaUpAmount) {
+            output += Array(deltaUpAmount).fill('^').join('');
         }
-        if(secondRobotRightMoves) {
-            secondRobotSequence += Array(secondRobotRightMoves).fill('>').join('');
+        if(deltaRightAmount) {
+            output += Array(deltaRightAmount).fill('>').join('');
         }
-        if(secondRobotLeftMoves && numpad[firstRobotPos[1]][nextCharPosX] === '' ) {
-            secondRobotSequence += Array(secondRobotLeftMoves).fill('<').join('');
+        if(deltaLeftAmount && numpad[firstRobotPos[1]][nextCharPosX] === '' ) {
+            output += Array(deltaLeftAmount).fill('<').join('');
         }
-        if(numpad[nextCharPosY][firstRobotPos[0]] === '' && secondRobotDownMoves) {
-            secondRobotSequence += Array(secondRobotDownMoves).fill('v').join('');
+        if(numpad[nextCharPosY][firstRobotPos[0]] === '' && deltaDownAmount) {
+            output += Array(deltaDownAmount).fill('v').join('');
         }
-        secondRobotSequence += 'A';
-        firstRobotPos = [...nextCharDiff];
+        output += 'A';
+        firstRobotPos = [...nextCharPos];
         i++;
     }
-    return secondRobotSequence;
+    return output;
 }
 
 
 const convertMovementToInstructionsForNextRobot = (str: string): string => {
     let i = 0;
-    let thirdRobotSequence = '';
-    let secondRobotPos = [2, 0];
+    let output = '';
+    let robotPos = [2, 0];
     while(i < str.length) {
         let nextChar = str.split('')[i]
         let nextCharPosY = directionalPad.findIndex((n) => n.includes(nextChar));
         let nextCharPosX = directionalPad[nextCharPosY].findIndex((n) => n === nextChar);
-        let nextCharDiff = [nextCharPosX, nextCharPosY];
-        let secondRobotDelta = [nextCharDiff[0]-secondRobotPos[0], nextCharDiff[1]-secondRobotPos[1]];
-        let thirdRobotLeftMoves = secondRobotDelta[0] < 0 ? -secondRobotDelta[0] : 0;
-        let thirdRobotRightMoves = secondRobotDelta[0] > 0 ? secondRobotDelta[0] : 0;
-        let thirdRobotUpMoves = secondRobotDelta[1] < 0 ? -secondRobotDelta[1] : 0;
-        let thirdRobotDownMoves = secondRobotDelta[1] > 0? secondRobotDelta[1] : 0;
-        if(directionalPad[secondRobotPos[1]][nextCharPosX] !== '' && thirdRobotLeftMoves) {
-            thirdRobotSequence += Array(thirdRobotLeftMoves).fill('<').join('');
+        let nextCharPos = [nextCharPosX, nextCharPosY];
+        let robotDelta = [nextCharPos[0]-robotPos[0], nextCharPos[1]-robotPos[1]];
+        let deltaLeftAmount = robotDelta[0] < 0 ? -robotDelta[0] : 0;
+        let deltaRightAmount = robotDelta[0] > 0 ? robotDelta[0] : 0;
+        let deltaUpAmount = robotDelta[1] < 0 ? -robotDelta[1] : 0;
+        let deltaDownAmount = robotDelta[1] > 0? robotDelta[1] : 0;
+        if(directionalPad[robotPos[1]][nextCharPosX] !== '' && deltaLeftAmount) {
+            output += Array(deltaLeftAmount).fill('<').join('');
         }
-        if(directionalPad[nextCharPosY][secondRobotPos[0]] !== '' && thirdRobotDownMoves) {
-            thirdRobotSequence += Array(thirdRobotDownMoves).fill('v').join('');
+        if(directionalPad[nextCharPosY][robotPos[0]] !== '' && deltaDownAmount) {
+            output += Array(deltaDownAmount).fill('v').join('');
         }
-        if(directionalPad[nextCharPosY][secondRobotPos[0]] !== '' && thirdRobotUpMoves) {
-            thirdRobotSequence += Array(thirdRobotUpMoves).fill('^').join('');
+        if(directionalPad[nextCharPosY][robotPos[0]] !== '' && deltaUpAmount) {
+            output += Array(deltaUpAmount).fill('^').join('');
         }
-        if(thirdRobotRightMoves) {
-            thirdRobotSequence += Array(thirdRobotRightMoves).fill('>').join('');
+        if(deltaRightAmount) {
+            output += Array(deltaRightAmount).fill('>').join('');
         }
-        if(thirdRobotLeftMoves && directionalPad[secondRobotPos[1]][nextCharPosX] === '' ) {
-            thirdRobotSequence += Array(thirdRobotLeftMoves).fill('<').join('');
+        if(deltaLeftAmount && directionalPad[robotPos[1]][nextCharPosX] === '' ) {
+            output += Array(deltaLeftAmount).fill('<').join('');
         }
-        if(directionalPad[nextCharPosY][secondRobotPos[0]] === '' && thirdRobotDownMoves) {
-            thirdRobotSequence += Array(thirdRobotDownMoves).fill('v').join('');
+        if(directionalPad[nextCharPosY][robotPos[0]] === '' && deltaDownAmount) {
+            output += Array(deltaDownAmount).fill('v').join('');
         }
-        if(directionalPad[nextCharPosY][secondRobotPos[0]] === '' && thirdRobotUpMoves) {
-            thirdRobotSequence += Array(thirdRobotUpMoves).fill('^').join('');
+        if(directionalPad[nextCharPosY][robotPos[0]] === '' && deltaUpAmount) {
+            output += Array(deltaUpAmount).fill('^').join('');
         }
-        thirdRobotSequence += 'A';
-        secondRobotPos = [...nextCharDiff];
+        output += 'A';
+        robotPos = [...nextCharPos];
         i++;
     }
-    return thirdRobotSequence
+    return output
 }
 let paths = input.map((sequence) => solveNumLock(sequence));
 let robotCache = new Map();
@@ -114,8 +114,7 @@ const addExtraRobotAndParseNewPath = (pathToParse: string, count: number): numbe
     return amount;
 }
 
-let pathLengths = paths.map((p) => addExtraRobotAndParseNewPath(p, 25));
-
+const pathLengths = paths.map((p) => addExtraRobotAndParseNewPath(p, 25));
 const codeValues = input.map((code) => +code.slice(0, code.length-1));
 const complexities = codeValues.map((val, i) => val * pathLengths[i]);
 
