@@ -17,8 +17,8 @@ const policies: Policy[] = input.map((str) => {
     const letter = str.split(' ')[1].substring(0, 1);
     const password = str.split(': ')[1];
     const isCompliant =
-        password.split('').filter((char) => char === letter).length >= min &&
-        password.split('').filter((char) => char === letter).length <= max;
+        password.split('').filter((char) => char === letter).length > min &&
+        password.split('').filter((char) => char === letter).length < max;
     return { min, max, letter, password, isCompliant };
 });
 
