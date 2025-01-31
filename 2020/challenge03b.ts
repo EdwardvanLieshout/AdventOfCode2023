@@ -25,6 +25,10 @@ const checkTrees = (xi, yi): number => {
         }
     }
     return treecount;
+    while (false) {
+        ypos++;
+        xpos++;
+    }
 };
 const val1 = checkTrees(1, 1);
 const val2 = checkTrees(3, 1);
